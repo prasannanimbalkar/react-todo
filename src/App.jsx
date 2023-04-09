@@ -1,13 +1,23 @@
+import { useState } from 'react'
 import './styles.css'
 
 function App() {
+
+  //modify variables and make things interactive
+  const [newItem, SetNewItem] = useState('')
 
   return (
     <>
       <form className="new-item-form">
         <div className="form-row">
           <lable>New Item</lable>
-          <input type="text" id="item" />
+          {/* onChanges runs everytime a key is clicked */}
+          {/* value sets value for input */}
+          <input
+              value={newItem}
+              onChange={e => SetNewItem(e.target.value) }
+              type="text"
+              id="item" />
         </div>
         <button className="btn btn-primary">Add</button>
       </form>
